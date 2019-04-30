@@ -20,7 +20,7 @@
 
         <TextView
             android:layout_width="0dp"
-            android:layout_height="24dp"
+            android:layout_height="@dimen/calendar_weekday_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             android:gravity="top|center_horizontal"
@@ -28,28 +28,28 @@
 
         <TextView
             android:layout_width="0dp"
-            android:layout_height="24dp"
+            android:layout_height="@dimen/calendar_weekday_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             android:gravity="top|center_horizontal"/>
 
         <TextView
             android:layout_width="0dp"
-            android:layout_height="24dp"
+            android:layout_height="@dimen/calendar_weekday_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             android:gravity="top|center_horizontal"/>
 
         <TextView
             android:layout_width="0dp"
-            android:layout_height="24dp"
+            android:layout_height="@dimen/calendar_weekday_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             android:gravity="top|center_horizontal"/>
 
         <TextView
             android:layout_width="0dp"
-            android:layout_height="24dp"
+            android:layout_height="@dimen/calendar_weekday_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             android:gravity="top|center_horizontal"/>
@@ -62,7 +62,7 @@
 
         <TextView
             android:layout_width="0dp"
-            android:layout_height="24dp"
+            android:layout_height="@dimen/calendar_weekday_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             android:gravity="top|center_horizontal"/>
@@ -71,49 +71,49 @@
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
@@ -122,49 +122,49 @@
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
@@ -173,49 +173,49 @@
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
@@ -224,49 +224,49 @@
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
@@ -275,49 +275,49 @@
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
@@ -326,49 +326,49 @@
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
 
         <com.squareup.timessquare.CalendarCellView
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/calendar_day_height"
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             />
