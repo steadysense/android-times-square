@@ -223,19 +223,20 @@ public class CalendarPickerView extends ListView {
 
     // Now iterate between minCal and maxCal and build up our list of months to show.
 
-    new MonthCalculater(selectedDate).execute();
+    new MonthCalculator(selectedDate).execute();
     return new FluentInitializer();
   }
 
-  private class MonthCalculater extends AsyncTask<Void, Void, Void> {
+  private class MonthCalculator extends AsyncTask<Void, Void, Void> {
 
     private Date selectedDate;
 
     private final IndexedLinkedHashMap<String, List<List<MonthCellDescriptor>>> cellsNew =
             new IndexedLinkedHashMap<>();
+    private final List<MonthDescriptor> newMonth = new ArrayList<>();
 
 
-    public MonthCalculater( Date selectedDate) {
+    public MonthCalculator(Date selectedDate) {
       this.selectedDate = selectedDate;
     }
 
@@ -254,7 +255,7 @@ public class CalendarPickerView extends ListView {
         String key = month.getYear() + "-" + month.getMonth();
         cellsNew.put(key, getMonthCells(month, monthCounter));
         Logr.d("Adding month %s", month);
-        months.add(month);
+        newMonth.add(month);
         monthCounter.add(MONTH, 1);
       }
       return null;
@@ -262,8 +263,9 @@ public class CalendarPickerView extends ListView {
 
     @Override
     protected void onPostExecute(Void aVoid) {
+      Logr.d("onPostExecute");
+      months.addAll(newMonth);
       cells = cellsNew;
-
       validateAndUpdate();
       if (selectedDate != null) {
         MonthCellWithMonthIndex monthCellWithMonthIndex = getMonthCellWithIndexByDate(selectedDate);
