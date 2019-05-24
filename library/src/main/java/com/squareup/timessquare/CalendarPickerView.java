@@ -243,6 +243,16 @@ public class CalendarPickerView extends ListView {
     @SuppressLint("WrongThread")
     @Override
     protected Void doInBackground(Void... voids) {
+      Calendar currentMonthCalendar = Calendar.getInstance();
+      currentMonthCalendar.setTime(selectedDate);
+      MonthDescriptor currentMonth =
+              new MonthDescriptor(currentMonthCalendar.get(MONTH), currentMonthCalendar.get(YEAR),
+                      selectedDate, "");
+      String currentMonthKey = currentMonth.getYear() + "-" + currentMonth.getMonth();
+      months.add(currentMonth);
+      cells.put(currentMonthKey, getMonthCells(currentMonth, currentMonthCalendar));
+      publishProgress();
+      Logr.d("Adding init month %s", currentMonth);
       final int maxMonth = maxCal.get(MONTH);
       final int maxYear = maxCal.get(YEAR);
       while ((monthCounter.get(MONTH) <= maxMonth // Up to, including the month.
@@ -262,8 +272,15 @@ public class CalendarPickerView extends ListView {
     }
 
     @Override
+    protected void onProgressUpdate(Void... values) {
+      super.onProgressUpdate(values);
+      validateAndUpdate();
+    }
+
+    @Override
     protected void onPostExecute(Void aVoid) {
       Logr.d("onPostExecute");
+      months.clear();
       months.addAll(newMonth);
       cells = cellsNew;
       validateAndUpdate();
@@ -274,7 +291,6 @@ public class CalendarPickerView extends ListView {
           initDoSelect(selectedDate, monthCellWithMonthIndex.cell);
         }
       }
-
     }
   }
 
