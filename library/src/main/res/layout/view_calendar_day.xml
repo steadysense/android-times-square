@@ -27,6 +27,15 @@
         android:visibility="gone"/>
 
     <ImageView
+        android:id="@+id/calendar_day_image_view_cross"
+        android:layout_width="14dp"
+        android:layout_height="12dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_cross"
+        android:visibility="gone"/>
+
+    <ImageView
             android:id="@+id/calendar_day_image_view_heart_large"
             android:layout_width="26dp"
             android:layout_height="23dp"
