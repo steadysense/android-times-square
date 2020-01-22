@@ -20,8 +20,8 @@ import java.util.List;
 import java.util.Locale;
 
 public class MonthView extends LinearLayout implements View.OnClickListener {
-    TextView monthHeader;
-    TextView yearHeader;
+    public TextView monthHeader;
+    public TextView yearHeader;
     GridLayout grid;
     private Listener listener;
     private List<CalendarCellDecorator> decorators;
