@@ -36,6 +36,10 @@ class IndexedLinkedHashMap<K, V> extends LinkedHashMap<K, V> {
   }
 
   int getIndexOfKey(K key) {
-    return keyToIndex.get(key);
+    Integer index = keyToIndex.get(key);
+    if (index == null) {
+      throw new IllegalStateException("Failed to retrieve " + key + " out of keyToIndex map " + keyToIndex.toString());
+    }
+    return index;
   }
 }
