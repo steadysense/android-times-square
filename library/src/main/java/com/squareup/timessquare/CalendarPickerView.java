@@ -223,8 +223,22 @@ public class CalendarPickerView extends ListView {
 
     // Now iterate between minCal and maxCal and build up our list of months to show.
 
+    buildInitialMonth(selectedDate);
     new MonthCalculator(selectedDate).execute();
     return new FluentInitializer();
+  }
+
+  private void buildInitialMonth(Date selectedDate) {
+    Calendar currentMonthCalendar = Calendar.getInstance();
+    currentMonthCalendar.setTime(selectedDate);
+    MonthDescriptor currentMonth =
+            new MonthDescriptor(currentMonthCalendar.get(MONTH), currentMonthCalendar.get(YEAR),
+                    selectedDate, "");
+    String currentMonthKey = currentMonth.getYear() + "-" + currentMonth.getMonth();
+    months.add(currentMonth);
+    cells.put(currentMonthKey, getMonthCells(currentMonth, currentMonthCalendar));
+
+    validateAndUpdate();
   }
 
   private class MonthCalculator extends AsyncTask<Void, Void, Void> {
@@ -243,16 +257,7 @@ public class CalendarPickerView extends ListView {
     @SuppressLint("WrongThread")
     @Override
     protected Void doInBackground(Void... voids) {
-      Calendar currentMonthCalendar = Calendar.getInstance();
-      currentMonthCalendar.setTime(selectedDate);
-      MonthDescriptor currentMonth =
-              new MonthDescriptor(currentMonthCalendar.get(MONTH), currentMonthCalendar.get(YEAR),
-                      selectedDate, "");
-      String currentMonthKey = currentMonth.getYear() + "-" + currentMonth.getMonth();
-      months.add(currentMonth);
-      cells.put(currentMonthKey, getMonthCells(currentMonth, currentMonthCalendar));
-      publishProgress();
-      Logr.d("Adding init month %s", currentMonth);
+
       final int maxMonth = maxCal.get(MONTH);
       final int maxYear = maxCal.get(YEAR);
       while ((monthCounter.get(MONTH) <= maxMonth // Up to, including the month.
@@ -271,27 +276,28 @@ public class CalendarPickerView extends ListView {
       return null;
     }
 
-    @Override
-    protected void onProgressUpdate(Void... values) {
-      super.onProgressUpdate(values);
-      validateAndUpdate();
-    }
 
     @Override
     protected void onPostExecute(Void aVoid) {
-      Logr.d("onPostExecute");
+      Logr.d("onPostExecute selectedDate %s", selectedDate.toString());
       months.clear();
       months.addAll(newMonth);
       cells = cellsNew;
       validateAndUpdate();
       if (selectedDate != null) {
-        MonthCellWithMonthIndex monthCellWithMonthIndex = getMonthCellWithIndexByDate(selectedDate);
+        final MonthCellWithMonthIndex monthCellWithMonthIndex = getMonthCellWithIndexByDate(selectedDate);
         if (monthCellWithMonthIndex != null) {
+          Logr.d("onPostExecute before setSelectionFromTop: %s", buildStateLog());
+          Logr.d("onPostExecute setSelectionFromTop at monthIndex %s", monthCellWithMonthIndex.monthIndex);
           setSelectionFromTop(monthCellWithMonthIndex.monthIndex, 0);
           initDoSelect(selectedDate, monthCellWithMonthIndex.cell);
         }
       }
     }
+  }
+
+  private String buildStateLog() {
+    return String.format("months.size = %s, getFirstVisiblePosition = %s adapter.getCount = %s", months.size(), getFirstVisiblePosition(), adapter.getCount());
   }
 
   /**
@@ -935,6 +941,8 @@ public class CalendarPickerView extends ListView {
       if (monthsReverseOrder) {
         position = months.size() - position - 1;
       }
+
+      Logr.d("getView: Init month view at position %s: %s", position, buildStateLog());
       monthView.init(months.get(position), cells.getValueAtIndex(position), displayOnly,
               titleTypeface, dateTypeface);
       return monthView;
