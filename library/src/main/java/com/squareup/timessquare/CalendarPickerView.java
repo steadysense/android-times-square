@@ -257,6 +257,7 @@ public class CalendarPickerView extends ListView {
     @SuppressLint("WrongThread")
     @Override
     protected Void doInBackground(Void... voids) {
+      long start = System.currentTimeMillis();
 
       final int maxMonth = maxCal.get(MONTH);
       final int maxYear = maxCal.get(YEAR);
@@ -273,6 +274,7 @@ public class CalendarPickerView extends ListView {
         newMonth.add(month);
         monthCounter.add(MONTH, 1);
       }
+      Logr.d("doInBackground month construction took %d ms", System.currentTimeMillis() - start);
       return null;
     }
 
