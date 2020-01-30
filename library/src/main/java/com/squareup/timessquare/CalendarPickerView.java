@@ -57,6 +57,7 @@ public class CalendarPickerView extends ListView {
   private final CalendarPickerView.MonthAdapter adapter;
   private IndexedLinkedHashMap<String, List<List<MonthCellDescriptor>>> cells =
           new IndexedLinkedHashMap<>();
+  private int numberOfMonths = 0;
   final MonthView.Listener listener = new CellClickedListener();
   final List<MonthDescriptor> months = new ArrayList<>();
   final List<MonthCellDescriptor> selectedCells = new ArrayList<>();
@@ -229,6 +230,9 @@ public class CalendarPickerView extends ListView {
   }
 
   private void buildInitialMonth(Date selectedDate) {
+    long start = System.currentTimeMillis();
+
+    numberOfMonths = computeNumberOfMonths();
     Calendar currentMonthCalendar = Calendar.getInstance();
     currentMonthCalendar.setTime(selectedDate);
     MonthDescriptor currentMonth =
@@ -239,6 +243,43 @@ public class CalendarPickerView extends ListView {
     cells.put(currentMonthKey, getMonthCells(currentMonth, currentMonthCalendar));
 
     validateAndUpdate();
+    setSelectionFromTop(getFastMonthIndexByDate(selectedDate), 0);
+
+    Logr.d("Initial month construction took %d ms", System.currentTimeMillis() - start);
+  }
+
+  private int computeNumberOfMonths() {
+    int minMonth = minCal.get(MONTH);
+    int minYear = minCal.get(YEAR);
+    int maxMonth = maxCal.get(MONTH);
+    int maxYear = maxCal.get(YEAR);
+    return (maxYear - minYear) * 12 + (maxMonth - minMonth) + 1;
+  }
+
+  private MonthDescriptor getMonthByPosition(int position) {
+    if (months.size() > position) {
+      return months.get(position);
+    } else {
+      return months.get(0);
+    }
+  }
+
+  public int getFastMonthIndexByDate(Date date) {
+    Calendar cal = Calendar.getInstance();
+    cal.setTime(date);
+    int startMonth = minCal.get(MONTH);
+    int startYear = minCal.get(YEAR);
+    int currentMonth = cal.get(MONTH);
+    int currentYear = cal.get(YEAR);
+    return (currentYear - startYear) * 12 + (currentMonth - startMonth);
+  }
+
+  private List<List<MonthCellDescriptor>> getMonthCellsByPosition(int position) {
+    if (cells.size() > position) {
+      return cells.getValueAtIndex(position);
+    } else {
+      return cells.getValueAtIndex(0);
+    }
   }
 
   private class MonthCalculator extends AsyncTask<Void, Void, Void> {
@@ -289,8 +330,7 @@ public class CalendarPickerView extends ListView {
       if (selectedDate != null) {
         final MonthCellWithMonthIndex monthCellWithMonthIndex = getMonthCellWithIndexByDate(selectedDate);
         if (monthCellWithMonthIndex != null) {
-          Logr.d("onPostExecute before setSelectionFromTop: %s", buildStateLog());
-          Logr.d("onPostExecute setSelectionFromTop at monthIndex %s", monthCellWithMonthIndex.monthIndex);
+          Logr.d("onPostExecute at monthIndex %s: %s", monthCellWithMonthIndex.monthIndex, buildStateLog());
           setSelectionFromTop(monthCellWithMonthIndex.monthIndex, 0);
           initDoSelect(selectedDate, monthCellWithMonthIndex.cell);
         }
@@ -866,9 +906,9 @@ public class CalendarPickerView extends ListView {
   /**
    * Hold a cell with a month-index.
    */
-  private static class MonthCellWithMonthIndex {
-    MonthCellDescriptor cell;
-    int monthIndex;
+  public static class MonthCellWithMonthIndex {
+    public MonthCellDescriptor cell;
+    public int monthIndex;
 
     MonthCellWithMonthIndex(MonthCellDescriptor cell, int monthIndex) {
       this.cell = cell;
@@ -879,7 +919,7 @@ public class CalendarPickerView extends ListView {
   /**
    * Return cell and month-index (for scrolling) for a given Date.
    */
-  private MonthCellWithMonthIndex getMonthCellWithIndexByDate(Date date) {
+  public MonthCellWithMonthIndex getMonthCellWithIndexByDate(Date date) {
     Calendar searchCal = Calendar.getInstance(timeZone, locale);
     searchCal.setTime(date);
     String monthKey = monthKey(searchCal);
@@ -913,12 +953,12 @@ public class CalendarPickerView extends ListView {
 
     @Override
     public int getCount() {
-      return months.size();
+      return numberOfMonths;
     }
 
     @Override
     public Object getItem(int position) {
-      return months.get(position);
+      return getMonthByPosition(position);
     }
 
     @Override
@@ -945,7 +985,7 @@ public class CalendarPickerView extends ListView {
       }
 
       Logr.d("getView: Init month view at position %s: %s", position, buildStateLog());
-      monthView.init(months.get(position), cells.getValueAtIndex(position), displayOnly,
+      monthView.init(getMonthByPosition(position), getMonthCellsByPosition(position), displayOnly,
               titleTypeface, dateTypeface);
       return monthView;
     }
