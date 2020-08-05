@@ -6,17 +6,6 @@
                 android:layout_height="@dimen/calendar_day_height"
                 tools:layout_width="50dp">
 
-
-    <TextView
-        android:id="@+id/calendar_day_text_view"
-        android:layout_width="29dp"
-        android:layout_height="29dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:textSize="16dp"
-        tools:text="12"/>
-
     <ImageView
         android:id="@+id/calendar_day_image_view_heart"
         android:layout_width="14dp"
@@ -27,13 +16,22 @@
         android:visibility="gone"/>
 
     <ImageView
-            android:id="@+id/calendar_day_image_view_heart_large"
-            android:layout_width="26dp"
-            android:layout_height="23dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/ic_heart_large"
-            android:visibility="gone"/>
+        android:id="@+id/calendar_day_image_view_heart_large"
+        android:layout_width="26dp"
+        android:layout_height="23dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_heart_large"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/calendar_day_image_view_attach_patch"
+        android:layout_width="34dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_patchklebetag"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="3dp"
+        android:visibility="gone"/>
 
     <ImageView
         android:id="@+id/calendar_day_image_view_point"
@@ -44,5 +42,15 @@
         android:layout_marginBottom="3dp"
         android:src="@drawable/ic_point"
         android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/calendar_day_text_view"
+        android:layout_width="29dp"
+        android:layout_height="29dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textSize="16dp"
+        tools:text="12"/>
 
 </RelativeLayout>
