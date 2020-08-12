@@ -43,6 +43,15 @@
         android:src="@drawable/ic_point"
         android:visibility="gone"/>
 
+    <ImageView
+        android:id="@+id/calendar_day_image_view_pregnancytest"
+        android:layout_width="26dp"
+        android:layout_height="46dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="0dp"
+        android:src="@drawable/ic_pregnancytest"
+        android:visibility="gone"/>
+
     <TextView
         android:id="@+id/calendar_day_text_view"
         android:layout_width="29dp"
