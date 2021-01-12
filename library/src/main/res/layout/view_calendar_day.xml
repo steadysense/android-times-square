@@ -70,7 +70,7 @@
         android:layout_height="22dp" />
     <ImageView
         android:id="@+id/calendar_day_background_left"
-        android:src="@drawable/calendar_day_background"
+        android:src="@drawable/calendar_day_background_left"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="10dp"
         android:layout_width="match_parent"
