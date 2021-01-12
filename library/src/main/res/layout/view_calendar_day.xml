@@ -62,4 +62,10 @@
         android:textSize="16dp"
         tools:text="12"/>
 
+    <View
+        android:id="@+id/calendar_day_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80ABABAB" />
+
 </RelativeLayout>
