@@ -67,11 +67,13 @@
         android:background="#80FF6E8C"
         android:layout_width="match_parent"
         android:layout_marginTop="4dp"
+        android:layout_marginLeft="10dp"
         android:layout_height="22dp" />
     <ImageView
         android:id="@+id/calendar_day_background_fertile"
         android:src="@drawable/calendar_day_background"
         android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
         android:layout_width="match_parent"
         android:layout_height="20dp" />
 </RelativeLayout>
