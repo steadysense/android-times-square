@@ -68,9 +68,9 @@
         android:layout_width="match_parent"
         android:layout_marginTop="4dp"
         android:layout_height="22dp" />
-    <View
+    <ImageView
         android:id="@+id/calendar_day_background_fertile"
-        android:background="#806EFF75"
+        android:src="@drawable/calendar_day_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </RelativeLayout>
