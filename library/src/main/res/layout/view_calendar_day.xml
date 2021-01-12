@@ -71,6 +71,7 @@
     <ImageView
         android:id="@+id/calendar_day_background_fertile"
         android:src="@drawable/calendar_day_background"
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="20dp" />
 </RelativeLayout>
