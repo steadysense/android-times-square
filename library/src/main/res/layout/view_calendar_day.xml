@@ -34,6 +34,14 @@
         android:layout_width="match_parent"
         android:layout_height="25dp"
         tools:ignore="ContentDescription" />
+    <ImageView
+        android:id="@+id/calendar_day_background_round"
+        android:src="@drawable/calendar_day_background_round"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        tools:ignore="ContentDescription" />
 
     <ImageView
         android:id="@+id/calendar_day_image_view_attach_patch"
