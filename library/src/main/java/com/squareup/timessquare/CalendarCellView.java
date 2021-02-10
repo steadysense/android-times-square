@@ -21,6 +21,7 @@ public class CalendarCellView extends RelativeLayout {
         super(context, attrs);
         inflate(getContext(), R.layout.view_calendar_day, this);
         dayOfMonthTextView = findViewById(R.id.calendar_day_text_view);
+        dayOfMonthTextView.bringToFront();
     }
 
     public void setSelectable(boolean isSelectable) {
