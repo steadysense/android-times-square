@@ -49,6 +49,22 @@
         tools:ignore="ContentDescription" />
 
     <ImageView
+        android:id="@+id/calendar_day_image_view_ovulation"
+        android:src="@drawable/ic_ovulation"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:id="@+id/calendar_day_image_view_today"
+        android:src="@drawable/drawable_round_border_dashed"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
         android:id="@+id/calendar_day_image_view_period"
         android:layout_width="36dp"
         android:layout_height="36dp"
