@@ -10,17 +10,20 @@
         android:id="@+id/calendar_day_background_very_fertile"
         android:background="#F0879B"
         android:layout_width="match_parent"
+        android:layout_centerVertical="true"
         android:layout_marginTop="2dp"
         android:layout_height="25dp" />
     <View
         android:id="@+id/calendar_day_background_extended_fertile"
         android:background="#80FF6E8C"
         android:layout_width="match_parent"
+        android:layout_centerVertical="true"
         android:layout_marginTop="2dp"
         android:layout_height="25dp" />
     <ImageView
         android:id="@+id/calendar_day_background_left"
         android:src="@drawable/calendar_day_background_left"
+        android:layout_centerVertical="true"
         android:layout_marginTop="2dp"
         android:layout_marginLeft="0dp"
         android:layout_width="match_parent"
@@ -29,6 +32,7 @@
     <ImageView
         android:id="@+id/calendar_day_background_right"
         android:src="@drawable/calendar_day_background_right"
+        android:layout_centerVertical="true"
         android:layout_marginTop="2dp"
         android:layout_marginRight="0dp"
         android:layout_width="match_parent"
@@ -37,6 +41,7 @@
     <ImageView
         android:id="@+id/calendar_day_background_round"
         android:src="@drawable/calendar_day_background_round"
+        android:layout_centerVertical="true"
         android:layout_marginTop="2dp"
         android:layout_marginRight="0dp"
         android:layout_width="match_parent"
@@ -44,11 +49,22 @@
         tools:ignore="ContentDescription" />
 
     <ImageView
+        android:id="@+id/calendar_day_image_view_period"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/ic_period"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="4dp"
+        android:visibility="gone"/>
+
+    <ImageView
         android:id="@+id/calendar_day_image_view_attach_patch"
         android:layout_width="34dp"
         android:layout_height="32dp"
         android:src="@drawable/ic_patchklebetag"
         android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:layout_marginBottom="3dp"
         android:visibility="gone"/>
 
@@ -57,6 +73,7 @@
         android:layout_width="14dp"
         android:layout_height="12dp"
         android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
         android:layout_marginTop="20dp"
         android:src="@drawable/ic_heart"
         android:visibility="gone"/>
@@ -66,6 +83,7 @@
         android:layout_width="26dp"
         android:layout_height="23dp"
         android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
         android:layout_marginTop="20dp"
         android:src="@drawable/ic_heart_large"
         android:visibility="gone"/>
@@ -93,7 +111,7 @@
         android:id="@+id/calendar_day_text_view"
         android:layout_width="29dp"
         android:layout_height="29dp"
-        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:textSize="16dp"
