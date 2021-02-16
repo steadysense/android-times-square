@@ -89,8 +89,7 @@
         android:layout_width="14dp"
         android:layout_height="12dp"
         android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:src="@drawable/ic_heart"
         android:visibility="gone"/>
 
@@ -99,8 +98,7 @@
         android:layout_width="26dp"
         android:layout_height="23dp"
         android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:src="@drawable/ic_heart_large"
         android:visibility="gone"/>
 
