@@ -997,7 +997,7 @@ public class CalendarPickerView extends ListView {
     List<List<MonthCellDescriptor>> cells = new ArrayList<>();
     cal.set(DAY_OF_MONTH, 1);
     int firstDayOfWeek = cal.get(DAY_OF_WEEK);
-    int offset = cal.getFirstDayOfWeek() - firstDayOfWeek;
+    int offset = MONDAY - firstDayOfWeek; // May affect fertile days UI
     if (offset > 0) {
       offset -= 7;
     }

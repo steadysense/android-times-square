@@ -59,7 +59,7 @@ public class MonthView extends LinearLayout implements View.OnClickListener {
         view.isRtl = isRtl(locale);
         view.locale = locale;
         view.alwaysDigitNumbers = showAlwaysDigitNumbers;
-        int firstDayOfWeek = today.getFirstDayOfWeek();
+        int firstDayOfWeek = Calendar.MONDAY; // May affect fertile days UI
         final TextView[] headerRow = {
                 (TextView) view.grid.getChildAt(0),
                 (TextView) view.grid.getChildAt(1),
