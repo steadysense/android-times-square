@@ -15,13 +15,13 @@
         android:layout_height="30dp" />
     <View
         android:id="@+id/calendar_day_background_extended_fertile"
-        android:background="#80FF6E8C"
+        android:background="#FFD4DD"
         android:layout_width="match_parent"
         android:layout_centerVertical="true"
         android:layout_height="30dp" />
     <View
         android:id="@+id/calendar_day_background_very_fertile"
-        android:background="#F0879B"
+        android:background="#FF8BA3"
         android:layout_width="match_parent"
         android:layout_centerVertical="true"
         android:layout_height="30dp" />
